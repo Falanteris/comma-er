@@ -21,7 +21,7 @@ def execute(option):
         arg_split = option.split(" ")
         return f"""
         === OUTPUT ===
-{subprocess.check_output(arg_split,text=True).strip()}
+{subprocess.check_output(arg_split,shell=True,text=True).strip()}
         === END OUTPUT == 
         """
     except Exception as e:
