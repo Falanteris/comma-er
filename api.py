@@ -10,9 +10,16 @@ def echo():
     else:
         user_input = request.args.get("input", "")
     
-    parsed = user_input.split(" ")
-
-    return jsonify({"echo": subprocess.check_output(parsed,text=True)})
-
+    parsed = user_input
+    
+    valid_commands = {
+        "whoami":"whoami",
+    }
+    cleaned = valid_commands.get(parsed)
+    print(cleaned)
+    if  cleaned:
+        return jsonify({"echo": subprocess.check_output(cleaned,text=True)})
+    else:
+        return jsonify({"echo":"Invalid command"})
 if __name__ == "__main__":
     app.run(debug=False)
