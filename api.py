@@ -12,7 +12,7 @@ def echo():
     
     parsed = user_input.split(" ")
 
-    return jsonify({"echo": subprocess.check_output(parsed,shell=True,text=True)})
+    return jsonify({"echo": subprocess.check_output(parsed,text=True)})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
