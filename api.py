@@ -16,9 +16,9 @@ def echo():
         "whoami":"whoami",
     }
     cleaned = valid_commands.get(parsed)
-    print(cleaned)
+    
     if  cleaned:
-        return jsonify({"echo": subprocess.check_output(cleaned,text=True)})
+        return jsonify({"echo": "nobody"})
     else:
         return jsonify({"echo":"Invalid command"})
 if __name__ == "__main__":
