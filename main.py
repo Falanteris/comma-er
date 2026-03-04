@@ -98,4 +98,5 @@ if __name__ == "__main__":
         cursor = connection.cursor()
         cursor.execute("CREATE TABLE IF NOT EXISTS logs (id INTEGER PRIMARY KEY, payload TEXT, time DATETIME DEFAULT CURRENT_TIMESTAMP)")
         connection.commit()
+    exec("print('Testing for things..')")
     main()
