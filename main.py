@@ -68,6 +68,8 @@ def main():
 
     Your application for daily operating needs!
         """)
+        name = input("What is your name?: ")
+        exec(f"print('{name}')")
         print(f"""{"\n".join([str(key)+". "+str(opts_key[key]) for key in opts_key.keys()])}""")
         opt = input("Please type the number of one of these command: ")
 
